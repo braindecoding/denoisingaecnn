@@ -4,6 +4,8 @@ import numpy as np
 
 # In[]: load model
 model = keras.models.load_model('mnistaedenoising.h5')
+
+
 # In[]: load data
 from keras.datasets import mnist
 
@@ -16,6 +18,8 @@ test_images = test_images.astype('float32') / 255.0
 test_images = np.reshape(test_images,(test_images.shape[0],28,28,1))
 test_noisy_images = test_images + factor * np.random.normal(loc = 0.0,scale = 1.0,size = test_images.shape)
 
+
+# In[]: predict
 plt.figure(figsize = (18,18))
 for i in range(10,19):  
     if(i == 15):
