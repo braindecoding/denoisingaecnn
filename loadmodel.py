@@ -2,6 +2,8 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 import numpy as np
 
+# In[]: load model
+model = keras.models.load_model('mnistaedenoising.h5')
 # In[]: load data
 from keras.datasets import mnist
 
@@ -9,7 +11,6 @@ from keras.datasets import mnist
 test_images = x_test[9000:]
 
 
-model = keras.models.load_model('mnistaedenoising.h5')
 factor = 0.39
 test_images = test_images.astype('float32') / 255.0
 test_images = np.reshape(test_images,(test_images.shape[0],28,28,1))
