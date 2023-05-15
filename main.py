@@ -139,6 +139,12 @@ plt.plot( history.history['val_accuracy'], label = 'val_accuracy')
 plt.legend(loc = 'best')
 plt.show()
 
+
+# In[]:save model weight
+model.save_weights('mnistCNNDenoiseweight.h5')
+model.save('mnistaedenoising.h5')
+
+
 # In[]:result visualization
 
 
