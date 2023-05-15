@@ -22,9 +22,10 @@ test_noisy_images = test_images + factor * np.random.normal(loc = 0.0,scale = 1.
 # In[]: predict
 plt.figure(figsize = (18,18))
 for i in range(10,19):  
-    if(i == 15):
+    if(i == 45):
         plt.title('Denoised Images', fontsize = 25, color = 'Blue') 
     
     plt.subplot(9,9,i)
-    plt.imshow(model.predict(test_noisy_images[i].reshape(1,28,28,1)).reshape(1,28,28)[0], cmap = plt.cm.binary) 
+    res=model.predict(test_noisy_images[i].reshape(1,28,28,1))
+    plt.imshow(res.reshape(1,28,28)[0], cmap = plt.cm.binary) 
 plt.show()
